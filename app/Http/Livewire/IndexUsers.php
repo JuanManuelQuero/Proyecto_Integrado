@@ -12,6 +12,7 @@ class IndexUsers extends Component
     use WithPagination;
     use WithFileUploads;
 
+    public $buscar = "";
     public $campo = 'id';
     public $orden = 'desc';
     public $isOpen = false;
@@ -29,7 +30,10 @@ class IndexUsers extends Component
 
     public function render()
     {
-        $users = User::orderBy($this->campo, $this->orden)->paginate(5);
+        $users = User::orderBy($this->campo, $this->orden)
+        ->where('name', 'like', "%".$this->buscar."%")
+        ->orWhere('email', 'like', "%".$this->buscar."%")
+        ->paginate(5);
         return view('livewire.index-users', compact('users'));
     }
 

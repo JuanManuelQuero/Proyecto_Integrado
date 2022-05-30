@@ -1,7 +1,12 @@
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mx-auto my-12">
+    <div class="flex-1 w-80">
+        <x-jet-input type="search" placeholder="Buscar..." wire:model="buscar" /><i class="fas fa-search"></i>
+    </div>
     <div class="my-2 flex flex-row-reverse">
         @livewire('create-mobile')
     </div>
+
+    @if($mobiles->count())
     <x-tabla>
         <table class="min-w-full divide-y divide-gray-200">
             <thead class="bg-gray-50">
@@ -60,7 +65,11 @@
             </tbody>
         </table>
     </x-tabla>
-
+    @else
+    <div class="mt-8">
+        <p class="text-center font-bold">No se ha encontrado ningun móvil</p>
+    </div>
+    @endif
     <div class="mt-2">
         {{ $mobiles->links() }}
     </div>

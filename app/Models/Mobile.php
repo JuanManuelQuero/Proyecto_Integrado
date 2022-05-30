@@ -15,6 +15,10 @@ class Mobile extends Model
         return $this->belongsToMany(User::class);
     }
 
+    public function comments() {
+        return $this->hasMany(Comment::class)->whereNull('parent_id');
+    }
+
     //Método para buscar
     public function scopeModelo($query, $v) {
         if(!isset($v)) {

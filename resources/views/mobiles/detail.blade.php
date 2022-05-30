@@ -51,11 +51,27 @@
                                 </dl>
                             </div>
                         </div>
+                        
 
                     </div>
+
+                    
+                </div>
+            </div>
+            <div id="divMas" class="card border-0 shadow mb-4">
+                <div class="card-body">
+                    <h5 class="m-0">Comentarios en <b>"{{ $mobile->modelo }}" </b> </h5>
+                    <hr>
+                    {{-- Formulario para crear comentarios --}}
+                    @include('comments.create')
+                    <br>
+                    {{-- Listar comentarios a través de list.blade.php --}}
+                    @include('comments.list', ['comments' => $mobile->comments])
                 </div>
             </div>
         </div>
     </div>
+
+    
 </x-app-layout>
 <x-footer></x-footer>

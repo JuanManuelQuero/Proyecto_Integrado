@@ -50,7 +50,8 @@ class MobileController extends Controller
      */
     public function show(Mobile $mobile)
     {
-        return view('mobiles.detail', compact('mobile'));
+        $comments = $mobile->comments()->get();
+        return view('mobiles.detail', compact('mobile', 'comments'));
     }
 
     /**

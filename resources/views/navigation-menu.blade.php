@@ -18,6 +18,9 @@
                     <x-jet-nav-link href="{{ route('mobiles.index') }}" :active="request()->routeIs('mobiles.index')">
                         {{ __('Móviles') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('contacto.index') }}" :active="request()->routeIs('contacto.index')">
+                        {{ __('Contáctanos') }}
+                    </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('mobiles.crud') }}" :active="request()->routeIs('mobiles.crud')">
                         {{ __('CRUD Móviles') }}
                     </x-jet-nav-link>
@@ -173,6 +176,9 @@
             </x-jet-responsive-nav-link>
             <x-jet-responsive-nav-link href="{{ route('mobiles.index') }}" :active="request()->routeIs('mobiles.index')">
                 {{ __('Móviles') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('contacto.index') }}" :active="request()->routeIs('contacto.index')">
+                {{ __('Contáctanos') }}
             </x-jet-responsive-nav-link>
             <x-jet-responsive-nav-link href="{{ route('mobiles.crud') }}" :active="request()->routeIs('mobiles.crud')">
                 {{ __('CRUD Móviles') }}

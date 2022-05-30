@@ -27,7 +27,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
-        'profile_photo_url'
+        'external_id',
+        'external_provider',
+        'github_token',
+        'github_refresh_token',
+        'email_verified_at'
     ];
 
     /**
@@ -62,5 +66,9 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function mobiles() {
         return $this->belongsToMany(Mobile::class);
+    }
+
+    public function comments() {
+        return $this->hasMany(Comment::class);
     }
 }

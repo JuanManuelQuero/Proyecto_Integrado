@@ -13,6 +13,7 @@ class IndexMobiles extends Component
     use WithPagination;
     use WithFileUploads;
 
+    public $buscar = "";
     public $campo = 'id';
     public $orden = 'desc';
     public $isOpen = false;
@@ -41,7 +42,10 @@ class IndexMobiles extends Component
         $marcas = ['Apple', 'Samsung', 'Xiaomi', 'Huawei'];
         $colores = ['Azul', 'Negro', 'Blanco', 'Plata', 'Oro', 'Rojo', 'Púrpura'];
         $almacenamientos = ['64GB', '128GB', '256GB', '512GB', '1TB'];
-        $mobiles = Mobile::orderBy($this->campo, $this->orden)->paginate(5);
+        $mobiles = Mobile::orderBy($this->campo, $this->orden)
+        ->where('marca', 'like', "%".$this->buscar."%")
+        ->orWhere('modelo', 'like', "%".$this->buscar."%")
+        ->paginate(5);
         return view('livewire.index-mobiles', compact('mobiles', 'marcas', 'colores', 'almacenamientos'));
     }
 
