@@ -28,6 +28,10 @@ class IndexUsers extends Component
         $this->user = new User;
     }
 
+    public function updatingBuscar() {
+        $this->resetPage();
+    }
+
     public function render()
     {
         $users = User::orderBy($this->campo, $this->orden)

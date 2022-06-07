@@ -21,12 +21,16 @@
                     <x-jet-nav-link href="{{ route('contacto.index') }}" :active="request()->routeIs('contacto.index')">
                         {{ __('Contáctanos') }}
                     </x-jet-nav-link>
+                    @can('mobiles.crud')
                     <x-jet-nav-link href="{{ route('mobiles.crud') }}" :active="request()->routeIs('mobiles.crud')">
                         {{ __('CRUD Móviles') }}
                     </x-jet-nav-link>
+                    @endcan
+                    @can('users.crud')
                     <x-jet-nav-link href="{{ route('users.crud') }}" :active="request()->routeIs('users.crud')">
                         {{ __('CRUD Usuarios') }}
                     </x-jet-nav-link>
+                    @endcan
                 </div>
             </div>
 
@@ -180,12 +184,16 @@
             <x-jet-responsive-nav-link href="{{ route('contacto.index') }}" :active="request()->routeIs('contacto.index')">
                 {{ __('Contáctanos') }}
             </x-jet-responsive-nav-link>
+            @can('mobiles.crud')
             <x-jet-responsive-nav-link href="{{ route('mobiles.crud') }}" :active="request()->routeIs('mobiles.crud')">
                 {{ __('CRUD Móviles') }}
             </x-jet-responsive-nav-link>
+            @endcan
+            @can('users.crud')
             <x-jet-responsive-nav-link href="{{ route('users.crud') }}" :active="request()->routeIs('users.crud')">
                 {{ __('CRUD Usuarios') }}
             </x-jet-responsive-nav-link>
+            @endcan
         </div>
 
         <!-- Responsive Settings Options -->

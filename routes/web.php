@@ -24,8 +24,7 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    $mobile1 = Mobile::orderBy('modelo', 'asc')->where('marca', 'Apple')->get();
-    return view('dashboard', compact('mobile1'));
+    return view('dashboard');
 })->name('dashboard');
 
 
@@ -36,10 +35,10 @@ Route::middleware(['auth:sanctum', 'verified'])->resource('mobiles', MobileContr
 Route::middleware(['auth:sanctum', 'verified'])->post('mobiles/{id}', 'App\Http\Controllers\MobileController@venderMovil')->name('mobiles.venderMovil');
 
 //Ruta para ver el CRUD de la tabla móviles
-Route::middleware(['auth:sanctum', 'verified'])->get('crudmobiles', IndexMobiles::class)->name('mobiles.crud');
+Route::middleware(['auth:sanctum', 'verified'])->middleware('can:mobiles.crud')->get('crudmobiles', IndexMobiles::class)->name('mobiles.crud');
 
 //Ruta para ver el CRUD de la tabla usuarios
-Route::middleware(['auth:sanctum', 'verified'])->get('crudusers', IndexUsers::class)->name('users.crud');
+Route::middleware(['auth:sanctum', 'verified'])->middleware('can:users.crud')->get('crudusers', IndexUsers::class)->name('users.crud');
 
 //Rutas para mostrar y enviar el mensaje de contacto
 Route::middleware(['auth:sanctum', 'verified'])->get('contacto', "App\Http\Controllers\ContactoController@index")->name('contacto.index');
