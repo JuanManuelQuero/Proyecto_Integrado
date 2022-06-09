@@ -12,6 +12,7 @@
                 </div>
             </div>
 
+            <!-- route('mobiles.venderMovil', $item->id) -->
 
         </form>
     </x-slot>
@@ -59,12 +60,12 @@
                                         <p class="mt-1 text-lg font-medium text-gray-900">{{ $item->precio }} €</p>
                                     </div>
                                     <div class="display-grid mt-4 mx-auto">
-                                        <form action="{{route('mobiles.venderMovil', $item->id)}}" method="POST">
+                                         <form action="{{route('mobiles.addCart', $item)}}" method="POST">
                                             @csrf
                                         <button type="submit"
                                             class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"><i
                                                 class="fa-solid fa-cart-shopping"></i></button>
-                                        </form>
+                                        </form> 
                                     </div>
                                 </div>
                             </div>

@@ -10,7 +10,7 @@
             </div>
 
             <div class="mb-4 text-sm text-gray-600" x-show="recovery">
-                {{ __('Confirme el acceso a su cuenta ingresando uno de sus códigos de recuperación de emergencia.') }}
+                {{ __('U') }}
             </div>
 
             <x-jet-validation-errors class="mb-4" />

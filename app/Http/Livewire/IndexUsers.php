@@ -21,7 +21,7 @@ class IndexUsers extends Component
     protected $rules = [
         'user.name' => ['required'],
         'user.email'=> ['required'],
-        'user.password'=>['required']
+        
     ];
 
     public function mount() {

@@ -31,6 +31,14 @@
                         {{ __('CRUD Usuarios') }}
                     </x-jet-nav-link>
                     @endcan
+
+                    
+                    
+                </div>
+                <div class="ml-12 mt-6">
+                    <a href="{{route('cart.index')}}"><i class="fa-solid fa-cart-shopping"></i>
+                        {{\Cart::session(auth()->id())->getContent()->count()}}
+                    </a>
                 </div>
             </div>
 
@@ -126,6 +134,7 @@
                         </x-slot>
 
                         <x-slot name="content">
+
                             <!-- Account Management -->
                             <div class="block px-4 py-2 text-xs text-gray-400">
                                 {{ __('Manage Account') }}

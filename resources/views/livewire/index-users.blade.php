@@ -8,6 +8,9 @@
             <table class="min-w-full divide-y divide-gray-200">
                 <thead class="bg-gray-50">
                     <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-base text-gray-500 uppercase">
+                            ID
+                        </th>
                         <th scope="col" wire:click="ordenar('name')"
                             class="cursor-pointer px-6 py-3 text-left text-xs font-base text-gray-500 uppercase whitespace-nowrap w-12">
                             Nombre usuario <i class="fa-solid fa-sort"></i>
@@ -30,11 +33,14 @@
                     @foreach ($users as $item)
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm text-gray-500">{{ $item->name }}</div>
+                                <div class="text-sm text-gray-900">{{ $item->id }}</div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="text-sm text-gray-900">{{ $item->name }}</div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="ml-4">
-                                    <div class="text-sm font-medium text-gray-900">{{ $item->email }}</div>
+                                    <div class="text-sm font-medium text-gray-500">{{ $item->email }}</div>
                                 </div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
@@ -93,14 +99,8 @@
                             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                         </x-form-input>
                     </div>
-                @endwire
-                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                    <x-form-input name="user.password" wire:model.defer="user.password" type="password" label="Contraseña del usuario"
-                        placeholder="Contraseña usuario"
-                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                    </x-form-input>
                 </div>
-            </div>
+            @endwire
         </x-slot>
 
         <x-slot name="footer">

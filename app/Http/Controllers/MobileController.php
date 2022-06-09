@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Mobile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MobileController extends Controller
 {
@@ -90,15 +91,28 @@ class MobileController extends Controller
 
     //### Otros Métodos ###
 
-    public function venderMovil($id) {
-        $mobile = Mobile::where('id', $id)->first();
-        $stock = $mobile->stock;
-        if($stock >= 1) {
-            $mobile->stock = $stock - 1;
-            $mobile->update();
-        } else {
-            return redirect()->route('mobiles.index')->with('mensaje', "No queda stock");
-        }
-        return redirect()->route('mobiles.index')->with('mensaje', "Móvil comprado");
+    public function dashboard() {
+        $userId = auth()->user()->id;
+        \Cart::session($userId)->clear();
+        return view('dashboard');
+    }
+    
+        
+    public function addCart(Mobile $mobile) {
+        //dd($mobile->marca);
+        $userId = auth()->user()->id;
+        \Cart::session($userId)->add(array(
+            'id' => $mobile->id,
+            'name' => $mobile->marca,
+            'price' => $mobile->precio,
+            'quantity' => 1,
+            'attributes' => array(
+                'modelo' => $mobile->modelo,
+                'image' => $mobile->image,
+            )
+        ));
+        $items = \Cart::getContent();
+        //dd($items);
+        return redirect()->route('mobiles.index')->with('mensaje', 'Móvil agregado al carrito');
     }
 }
