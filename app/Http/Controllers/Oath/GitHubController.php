@@ -3,31 +3,29 @@
 namespace App\Http\Controllers\Oath;
 
 use App\Models\User;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
 class GitHubController extends Controller
 {
-    public function redirect(){
+    public function redirect() {
         return Socialite::driver('github')->redirect();
     }
 
-    public function callback(){
-        
-        $gitUser=Socialite::driver('github')->user();
-        
+    public function callback() {
+        $gitUser = Socialite::driver('github')->user();
+
         $usuario = User::where('external_provider', 'github')
             ->where('external_id', $gitUser->getId())->first();
-        
-        if($usuario){
+
+        if($usuario) {
             $usuario->update([
                 'github_token'=>$gitUser->token,
                 'github_refresh_token'=>$gitUser->refreshToken
             ]);
-        }
-        else{
+        } else {
             $usuario=User::create([
                 'external_provider'=>'github',
                 'external_id'=>$gitUser->getId(),
@@ -38,13 +36,9 @@ class GitHubController extends Controller
                 'github_token'=>$gitUser->token,
                 'github_refresh_token'=>$gitUser->refreshToken
             ]);
-
         }
-        
-        
+
         Auth::login($usuario);
         return redirect('dashboard');
-
-
     }
 }

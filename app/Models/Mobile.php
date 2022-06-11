@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Mobile extends Model
 {
     use HasFactory;
-
+    
     protected $fillable = ['marca', 'modelo', 'precio', 'stock', 'color', 'almacenamiento', 'pantalla', 'chip', 'image'];
 
     public function users() {

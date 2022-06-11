@@ -36,6 +36,14 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at'
     ];
 
+    public function mobiles() {
+        return $this->belongsToMany(Mobile::class);
+    }
+
+    public function comments() {
+        return $this->hasMany(Comment::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -65,12 +73,4 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $appends = [
         'profile_photo_url',
     ];
-
-    public function mobiles() {
-        return $this->belongsToMany(Mobile::class);
-    }
-
-    public function comments() {
-        return $this->hasMany(Comment::class);
-    }
 }

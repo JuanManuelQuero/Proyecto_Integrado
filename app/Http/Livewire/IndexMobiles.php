@@ -10,6 +10,7 @@ use Livewire\WithPagination;
 
 class IndexMobiles extends Component
 {
+
     use WithPagination;
     use WithFileUploads;
 
@@ -35,6 +36,10 @@ class IndexMobiles extends Component
 
     public function mount() {
         $this->mobile = new Mobile;
+    }
+
+    public function updatingBuscar() {
+        $this->resetPage();
     }
 
     public function render()

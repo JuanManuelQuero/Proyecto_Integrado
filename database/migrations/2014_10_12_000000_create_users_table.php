@@ -20,7 +20,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
 
-            //Campos para login con githuv
+            //campos para oath
             $table->string('external_id')->nullable();
             $table->string('external_provider')->nullable();
             $table->string('github_token')->nullable();

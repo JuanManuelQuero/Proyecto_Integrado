@@ -12,7 +12,6 @@ class ContactoMailable extends Mailable
     use Queueable, SerializesModels;
 
     public $datosMensaje;
-
     /**
      * Create a new message instance.
      *

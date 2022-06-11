@@ -26,19 +26,13 @@
                         {{ __('CRUD Móviles') }}
                     </x-jet-nav-link>
                     @endcan
-                    @can('users.crud')
-                    <x-jet-nav-link href="{{ route('users.crud') }}" :active="request()->routeIs('users.crud')">
-                        {{ __('CRUD Usuarios') }}
-                    </x-jet-nav-link>
-                    @endcan
 
+                    <div class="ml-12 mt-6">
+                        <a href="{{route('cart.index')}}"><i class="fa-solid fa-cart-shopping"></i>
+                            {{\Cart::session(auth()->id())->getContent()->count()}}
+                        </a>
+                    </div>
                     
-                    
-                </div>
-                <div class="ml-12 mt-6">
-                    <a href="{{route('cart.index')}}"><i class="fa-solid fa-cart-shopping"></i>
-                        {{\Cart::session(auth()->id())->getContent()->count()}}
-                    </a>
                 </div>
             </div>
 
@@ -103,19 +97,19 @@
                     <x-jet-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                                <div class="flex">
-                                    <div class="mt-2 mr-4 text-gray-400">
-                                        {{ Auth::user()->name }}
-                                    </div>
-                                    <div class="display-grid">
-                                        <button
-                                            class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
-                                            <img class="h-8 w-8 rounded-full object-cover"
-                                                src="{{ Auth::user()->profile_photo_url }}"
-                                                alt="{{ Auth::user()->name }}" />
-                                        </button>
-                                    </div>
+                            <div class="flex">
+                                <div class="mt-2 mr-4 text-gray-400">
+                                    {{ Auth::user()->name }}
                                 </div>
+                                <div class="display-grid">
+                                    <button
+                                        class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
+                                        <img class="h-8 w-8 rounded-full object-cover"
+                                            src="{{ Auth::user()->profile_photo_url }}"
+                                            alt="{{ Auth::user()->name }}" />
+                                    </button>
+                                </div>
+                            </div>
                             @else
                                 <span class="inline-flex rounded-md">
                                     <button type="button"
@@ -134,14 +128,13 @@
                         </x-slot>
 
                         <x-slot name="content">
-
                             <!-- Account Management -->
                             <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Manage Account') }}
+                                {{ __('Administar Cuenta') }}
                             </div>
 
                             <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Profile') }}
+                                {{ __('Perfil') }}
                             </x-jet-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -157,7 +150,7 @@
                                 @csrf
 
                                 <x-jet-dropdown-link href="{{ route('logout') }}" @click.prevent="$root.submit();">
-                                    {{ __('Log Out') }}
+                                    {{ __('Cerrar Sesión') }}
                                 </x-jet-dropdown-link>
                             </form>
                         </x-slot>
@@ -185,7 +178,7 @@
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('Inicio') }}
             </x-jet-responsive-nav-link>
             <x-jet-responsive-nav-link href="{{ route('mobiles.index') }}" :active="request()->routeIs('mobiles.index')">
                 {{ __('Móviles') }}
@@ -196,11 +189,6 @@
             @can('mobiles.crud')
             <x-jet-responsive-nav-link href="{{ route('mobiles.crud') }}" :active="request()->routeIs('mobiles.crud')">
                 {{ __('CRUD Móviles') }}
-            </x-jet-responsive-nav-link>
-            @endcan
-            @can('users.crud')
-            <x-jet-responsive-nav-link href="{{ route('users.crud') }}" :active="request()->routeIs('users.crud')">
-                {{ __('CRUD Usuarios') }}
             </x-jet-responsive-nav-link>
             @endcan
         </div>
@@ -224,7 +212,7 @@
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
                 <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                    {{ __('Profile') }}
+                    {{ __('Perfil') }}
                 </x-jet-responsive-nav-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -238,7 +226,7 @@
                     @csrf
 
                     <x-jet-responsive-nav-link href="{{ route('logout') }}" @click.prevent="$root.submit();">
-                        {{ __('Log Out') }}
+                        {{ __('Cerrar Sesión') }}
                     </x-jet-responsive-nav-link>
                 </form>
 

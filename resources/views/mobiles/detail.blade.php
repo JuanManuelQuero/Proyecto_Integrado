@@ -14,12 +14,10 @@
                         <div class="bg-white shadow overflow-hidden sm:rounded-lg">
                             <div class="px-4 py-5 sm:px-6">
                                 <div class="flex flex-row-reverse">
-                                    <a href="{{ route('mobiles.index') }}"
-                                        class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"><i
-                                            class=""></i> Volver</a>
+                                    <a href="{{route('mobiles.index')}}" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"><i class=""></i> Volver</a>
                                 </div>
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">{{ $mobile->modelo }}</h3>
-                                <p class="mt-1 max-w-2xl text-sm text-gray-500">{{ $mobile->marca }}</p>
+                                <h3 class="text-lg leading-6 font-medium text-gray-900">{{$mobile->modelo }}</h3>
+                                <p class="mt-1 max-w-2xl text-sm text-gray-500">{{$mobile->marca}}</p>
                                 <img src="{{ Storage::url($mobile->image) }}"
                                     class="h-124 w-24 object-cover object-center" alt="">
                             </div>
@@ -27,43 +25,35 @@
                                 <dl>
                                     <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                         <dt class="text-sm font-medium text-gray-500">Modelo</dt>
-                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                            {{ $mobile->modelo }}</dd>
+                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{$mobile->modelo}}</dd>
                                     </div>
                                     <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                         <dt class="text-sm font-medium text-gray-500">Stock</dt>
-                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                            {{ $mobile->stock }} unidades
+                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{$mobile->stock}} unidades
                                         </dd>
                                     </div>
                                     <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                         <dt class="text-sm font-medium text-gray-500">Almacenamiento</dt>
                                         <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                            {{ $mobile->almacenamiento }}</dd>
+                                            {{$mobile->almacenamiento}}</dd>
                                     </div>
                                     <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                         <dt class="text-sm font-medium text-gray-500">Precio</dt>
-                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                            {{ $mobile->precio }} €</dd>
+                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{$mobile->precio}} €</dd>
                                     </div>
                                     <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                         <dt class="text-sm font-medium text-gray-500">Pantalla</dt>
-                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                            {{ $mobile->pantalla }}</dd>
+                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{$mobile->pantalla}}</dd>
                                     </div>
                                     <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                         <dt class="text-sm font-medium text-gray-500">Chip</dt>
-                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                            {{ $mobile->chip }}</dd>
+                                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{$mobile->chip}}</dd>
                                     </div>
                                 </dl>
                             </div>
                         </div>
 
-
                     </div>
-
-
                 </div>
             </div>
 
@@ -120,7 +110,5 @@
             </div>
         </div>
     </div>
-
-
 </x-app-layout>
 <x-footer></x-footer>

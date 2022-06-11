@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Mobile;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class MobileController extends Controller
 {
@@ -46,7 +45,7 @@ class MobileController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Mobile  $mobile
      * @return \Illuminate\Http\Response
      */
     public function show(Mobile $mobile)
@@ -58,10 +57,10 @@ class MobileController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Mobile  $mobile
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Mobile $mobile)
     {
         //
     }
@@ -70,10 +69,10 @@ class MobileController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Mobile  $mobile
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Mobile $mobile)
     {
         //
     }
@@ -81,25 +80,20 @@ class MobileController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Mobile  $mobile
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Mobile $mobile)
     {
         //
     }
 
-    //### Otros Métodos ###
-
-    public function dashboard() {
-        $userId = auth()->user()->id;
-        \Cart::session($userId)->clear();
-        return view('dashboard');
-    }
     
-        
+    //Otros métodos
+
+    //función que nos permite agragar items al carrito dependiendo del
+    //id del usuario
     public function addCart(Mobile $mobile) {
-        //dd($mobile->marca);
         $userId = auth()->user()->id;
         \Cart::session($userId)->add(array(
             'id' => $mobile->id,
@@ -111,8 +105,7 @@ class MobileController extends Controller
                 'image' => $mobile->image,
             )
         ));
-        $items = \Cart::getContent();
-        //dd($items);
+       \Cart::getContent();
         return redirect()->route('mobiles.index')->with('mensaje', 'Móvil agregado al carrito');
     }
 }

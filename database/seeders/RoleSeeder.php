@@ -20,7 +20,5 @@ class RoleSeeder extends Seeder
 
         Permission::create(['name' => 'mobiles.crud'])->assignRole($role1);
         Permission::create(['name' => 'users.crud'])->assignRole($role1);
-        
-
     }
 }

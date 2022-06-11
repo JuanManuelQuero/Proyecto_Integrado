@@ -2,6 +2,7 @@
     <div class="flex-1 w-80">
         <x-jet-input type="search" placeholder="Buscar..." wire:model="buscar" /><i class="fas fa-search"></i>
     </div>
+
     <div class="my-2 flex flex-row-reverse">
         @livewire('create-mobile')
     </div>
@@ -67,9 +68,10 @@
     </x-tabla>
     @else
     <div class="mt-8">
-        <p class="text-center font-bold">No se ha encontrado ningun móvil</p>
+        <p class="text-center font-bold">No se ha encontrado ningún móvil</p>
     </div>
     @endif
+    
     <div class="mt-2">
         {{ $mobiles->links() }}
     </div>

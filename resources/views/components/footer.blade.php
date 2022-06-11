@@ -6,7 +6,7 @@
             <a href="{{route('dashboard')}}" class="mr-4 hover:underline md:mr-6 ">Sobre nosotros</a>
         </li>
         <li>
-            <a href="#" class="hover:underline">Contactanos</a>
+            <a href="{{route('contacto.index')}}" class="hover:underline">Contactanos</a>
         </li>
     </ul>
 </footer>
