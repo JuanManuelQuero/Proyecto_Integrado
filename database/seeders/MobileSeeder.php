@@ -134,7 +134,7 @@ class MobileSeeder extends Seeder
                         Núcleos del procesador 8
                         Velocidad del procesador 4x2.3 GHz & 4x1.7 GHz
                         Procesador gráfico Mali-G71',
-            'image' => 'mobile/galaxyS8plus.png'
+            'image' => 'mobile/galaxyS8plus.jpg'
 
         ]);
         Mobile::create([
@@ -151,7 +151,7 @@ class MobileSeeder extends Seeder
                         Núcleos del procesador 8
                         Velocidad del procesador 4x2.3 GHz & 4x1.7 GHz
                         Procesador gráfico Mali-G71',
-            'image' => 'mobile/galaxyS8.png'
+            'image' => 'mobile/galaxyS8.jpg'
 
         ]);
         Mobile::create([
@@ -168,7 +168,7 @@ class MobileSeeder extends Seeder
                         Núcleos del procesador 8
                         Velocidad del procesador 4x2.7 GHz & 4x1.7 GHz
                         Procesador gráfico Mali-G71',
-            'image' => 'mobile/galaxyS9plus.png'
+            'image' => 'mobile/galaxyS9plus.jpg'
 
         ]);
         Mobile::create([
@@ -185,7 +185,7 @@ class MobileSeeder extends Seeder
                         Núcleos del procesador 8
                         Velocidad del procesador 4x2.7 GHz & 4x1.7 GHz
                         Procesador gráfico Mali-G71',
-            'image' => 'mobile/galaxyS9.png'
+            'image' => 'mobile/galaxyS9.jpg'
 
         ]);
         Mobile::create([
@@ -202,7 +202,7 @@ class MobileSeeder extends Seeder
                         Núcleos del procesador 8
                         Velocidad del procesador 2.7GHz, 2.3GHz y 1.9GHz
                         Procesador gráfico Mali-G76',
-            'image' => 'mobile/galaxyS10plus.png'
+            'image' => 'mobile/galaxyS10plus.jpg'
 
         ]);
         Mobile::create([
@@ -219,7 +219,7 @@ class MobileSeeder extends Seeder
                         Núcleos del procesador 8
                         Velocidad del procesador 2.7GHz, 2.3GHz y 1.9GHz
                         Procesador gráfico Mali-G76',
-            'image' => 'mobile/galaxyS10e.png'
+            'image' => 'mobile/galaxyS10e.jpg'
 
         ]);
         Mobile::create([
@@ -236,7 +236,7 @@ class MobileSeeder extends Seeder
                         Núcleos del procesador 8
                         Velocidad del procesador 2.7GHz, 2.3GHz y 1.9GHz
                         Procesador gráfico Mali-G76',
-            'image' => 'mobile/galaxyS10.png'
+            'image' => 'mobile/galaxyS10.jpg'
 
         ]);
 
