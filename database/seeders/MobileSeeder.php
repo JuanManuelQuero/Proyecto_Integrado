@@ -98,7 +98,7 @@ class MobileSeeder extends Seeder
                         Nueva CPU de 6 núcleos con 2 núcleos de rendimiento y 4 de eficiencia
                         Nueva GPU de 5 núcleos
                         Nuevo Neural Engine de 16 núcleos',
-            'image' => 'mobile/iphone13promax.png'
+            'image' => 'mobile/iphone11promax.jpg'
 
         ]);
         Mobile::create([
@@ -115,7 +115,7 @@ class MobileSeeder extends Seeder
                         Nueva CPU de 6 núcleos con 2 núcleos de rendimiento y 4 de eficiencia
                         Nueva GPU de 5 núcleos
                         Nuevo Neural Engine de 16 núcleos',
-            'image' => 'mobile/iphone13promax.png'
+            'image' => 'mobile/iphone13pro.jpg'
 
         ]);
 

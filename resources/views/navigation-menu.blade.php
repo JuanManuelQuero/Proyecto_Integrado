@@ -191,6 +191,11 @@
                 {{ __('CRUD Móviles') }}
             </x-jet-responsive-nav-link>
             @endcan
+            <div class="ml-12 mt-6">
+                <a href="{{route('cart.index')}}"><i class="fa-solid fa-cart-shopping"></i>
+                    {{\Cart::session(auth()->id())->getContent()->count()}}
+                </a>
+            </div>
         </div>
 
         <!-- Responsive Settings Options -->
