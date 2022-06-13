@@ -63,7 +63,7 @@ class CartController extends Controller
             $mobile = Mobile::where('id', $row->id)->first();
             $stock = $mobile->stock;
             if($stock >= 1) {
-                $mobile->stock = $stock - 1;
+                $mobile->stock = $stock - $row->quantity;
                 $mobile->update();
             } else {
                 return redirect()->route('cart.index')->with('mensaje', 'No se ha podido realizar la compra');
