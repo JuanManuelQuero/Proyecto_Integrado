@@ -107,7 +107,7 @@
                     <div class="mt-8">
                         <a href="{{ route('mobiles.index') }}"
                             class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 px-3 text-sm text-white uppercase"
-                            style="width: 100%;">Ir
+                            style="width: 100%;">
                             Tienda</a>
                     </div>
                 </div>

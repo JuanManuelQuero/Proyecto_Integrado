@@ -26,7 +26,7 @@ class IndexMobiles extends Component
         'mobile.marca'=>['required'],
         'mobile.modelo'=>['required', 'string', 'min:3'],
         'mobile.precio'=>['required', 'numeric', 'min:100'],
-        'mobile.stock'=>['required', 'integer', 'min:10', 'max:300'],
+        'mobile.stock'=>['required', 'integer', 'min:1', 'max:300'],
         'mobile.color'=>['required'],
         'mobile.almacenamiento'=>['required'],
         'mobile.pantalla'=>['required', 'string', 'min:10'],

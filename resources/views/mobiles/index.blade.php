@@ -59,12 +59,16 @@
                                     <p class="mt-1 text-lg font-medium text-gray-900">{{ $item->precio }} €</p>
                                 </div>
                                 <div class="display-grid mt-4 mx-auto">
+                                    @if($item->stock > 0)
                                     <form action="{{route('mobiles.addCart', $item)}}" method="POST">
                                         @csrf
                                     <button type="submit"
                                         class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"><i
                                             class="fa-solid fa-cart-shopping"></i></button>
                                     </form>
+                                    @else
+                                    <button class="bg-red-500 text-white font-bold py-2 px-4 rounded">No stock</button>
+                                    @endif
                                 </div>
                             </div>
                         </div>
