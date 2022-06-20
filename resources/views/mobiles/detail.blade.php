@@ -18,7 +18,7 @@
                                 </div>
                                 <h3 class="text-lg leading-6 font-medium text-gray-900">{{$mobile->modelo }}</h3>
                                 <p class="mt-1 max-w-2xl text-sm text-gray-500">{{$mobile->marca}}</p>
-                                <img src="{{ asset('storage/'.$item->image) }}"
+                                <img src="{{ asset('storage/'.$mobile->image) }}"
                                     class="h-124 w-24 object-cover object-center" alt="">
                             </div>
                             <div class="border-t border-gray-200">
