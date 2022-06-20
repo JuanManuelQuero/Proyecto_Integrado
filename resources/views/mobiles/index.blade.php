@@ -50,7 +50,7 @@
                                 class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                                 <a href="{{ route('mobiles.show', $item) }}" class="group">
                                     <img src="{{ Storage::url($item->image) }}"
-                                        class="w-full h-full group-hover:opacity-75">
+                                        class="w-full h-full">
                                 </a>
                             </div>
                             <div class="flex">
@@ -101,7 +101,7 @@
                                 class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                                 <a href="{{ route('mobiles.show', $item) }}" class="group">
                                     <img src="{{ Storage::url($item->image) }}"
-                                        class="w-full h-full group-hover:opacity-75">
+                                        class="w-full h-full">
                                 </a>
                             </div>
                             <div class="flex">
@@ -148,7 +148,7 @@
                                 class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                                 <a href="{{ route('mobiles.show', $item) }}" class="group">
                                     <img src="{{ Storage::url($item->image) }}"
-                                        class="w-full h-full group-hover:opacity-75">
+                                        class="w-full h-full">
                                 </a>
                             </div>
                             <div class="flex">
@@ -195,7 +195,7 @@
                                 class="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                                 <a href="{{ route('mobiles.show', $item) }}" class="group">
                                     <img src="{{ Storage::url($item->image) }}"
-                                        class="w-full h-full group-hover:opacity-75">
+                                        class="w-full h-full">
                                 </a>
                             </div>
                             <div class="flex">
